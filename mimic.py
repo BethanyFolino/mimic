@@ -71,9 +71,12 @@ def print_mimic_random(mimic_dict, num_words):
     Look
     up the `end` keyword argument for the `print()` function.
     """
-    for word in mimic_dict:
-        randomize = random.choice(mimic_dict.get(word))
-        print(num_words, randomize, end="")
+    while num_words > 0:
+        for word in mimic_dict:
+            randomize = random.choice(mimic_dict.get(word))
+            print("", end="")
+            print(word, randomize, end="")
+            num_words = num_words - 1
 
 
 def main(args):
