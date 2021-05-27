@@ -25,7 +25,7 @@ https://stackoverflow.com/questions/42602284/dictionary-containing
 -words-from-a-text-file-as-keys-with-a-list-of-all-the-next"""
 
 
-# import random
+import random
 import sys
 
 
@@ -71,8 +71,9 @@ def print_mimic_random(mimic_dict, num_words):
     Look
     up the `end` keyword argument for the `print()` function.
     """
-    # +++your code here+++
-    pass
+    for word in mimic_dict:
+        randomize = random.choice(mimic_dict.get(word))
+        print(num_words, randomize, end="")
 
 
 def main(args):
