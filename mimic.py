@@ -20,7 +20,7 @@ You can try adding in line breaks around 70 columns so the output looks
 better.
 """
 
-__author__ = """Bethany Folino with help from Jacob Short and
+__author__ = """Bethany Folino with help from Jacob Short, Matt Perry, and
 https://stackoverflow.com/questions/42602284/dictionary-containing
 -words-from-a-text-file-as-keys-with-a-list-of-all-the-next"""
 
