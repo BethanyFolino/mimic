@@ -20,7 +20,9 @@ You can try adding in line breaks around 70 columns so the output looks
 better.
 """
 
-__author__ = "???"
+__author__ = """Bethany Folino with help from Jacob Short, Matt Perry, and
+https://stackoverflow.com/questions/42602284/dictionary-containing
+-words-from-a-text-file-as-keys-with-a-list-of-all-the-next"""
 
 
 import random
@@ -46,8 +48,14 @@ def create_mimic_dict(filename):
                 "who" : ["knows"]
             }
     """
-    # +++your code here+++
-    pass
+    with open(filename) as text:
+        contents = text.read()
+        contents = contents.split()
+        words = {"": ["I"]}
+        for i in range(len(contents) - 1):
+            words.setdefault(contents[i], []).append(contents[i+1])
+        words.setdefault(contents[-2], [])
+        return words
 
 
 def print_mimic_random(mimic_dict, num_words):
@@ -59,12 +67,20 @@ def print_mimic_random(mimic_dict, num_words):
         - Look up the start_word in your mimic_dict and get its next-list
         - Randomly select a new word from the next-list
         - Repeat this process num_words times
-    
-    Hint: `print()` automatically adds a newline unless you tell it not to. Look
+    Hint: `print()` automatically adds a newline unless you tell it not to.
+    Look
     up the `end` keyword argument for the `print()` function.
     """
-    # +++your code here+++
-    pass
+    count = 1
+    while count <= num_words:
+        for word in mimic_dict:
+            if word == "":
+                pass
+            else:
+                words = mimic_dict.get(word)
+                randomize = random.choice(words)
+                print(randomize, end=" ")
+                count += 1
 
 
 def main(args):
